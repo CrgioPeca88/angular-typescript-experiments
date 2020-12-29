@@ -75,10 +75,8 @@ body {
   font-size: 12px;
 }
 
-.test-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.title-container {
+  width: 100%;
 }
 
 .title-test {
@@ -86,4 +84,5 @@ body {
   text-align: center;
   background-color: #dbed91;
   width: 50%;
+  margin: 5px auto;
 }

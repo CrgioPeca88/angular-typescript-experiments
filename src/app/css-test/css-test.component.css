@@ -1,0 +1,12 @@
+.container-css-test {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.element-css-test {
+  width: 325px;
+  height: 50vh;
+  border: 1px solid black;
+  flex-shrink: 1;
+}
