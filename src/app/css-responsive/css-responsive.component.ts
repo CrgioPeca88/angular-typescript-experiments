@@ -46,4 +46,30 @@ export class CssResponsiveTestComponent implements OnInit {
     }
   }
 
+  /*let elem = document.getElementById("myAnimation");
+  let ppButton = document.getElementById("stopButton");
+  let running = true;
+  let pos = 0;
+  let id = start();
+
+  function start() {
+    return setInterval(frame, 1);
+  }
+
+  function frame() {
+    pos = (pos === 350) ? 0 : pos + 1;
+    elem.style.top = pos + 'px';
+    elem.style.left = pos + 'px';
+  }
+
+  ppButton.onclick = () => {
+    if (running) {
+      running = false;
+      clearInterval(id);
+    } else {
+      running = true;
+      id = start();
+    }
+  }*/
+
 }
