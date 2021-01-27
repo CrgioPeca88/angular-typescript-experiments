@@ -46,6 +46,8 @@ export class CssResponsiveTestComponent implements OnInit {
     }
   }
 
+  //======================JS CODE===============================================
+
   /*let elem = document.getElementById("myAnimation");
   let ppButton = document.getElementById("stopButton");
   let running = true;
