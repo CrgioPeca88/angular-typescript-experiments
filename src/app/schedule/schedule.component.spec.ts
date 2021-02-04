@@ -1,5 +1,5 @@
 import { TestBed, async, inject } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
+import { By } from '@angular/common';
 import { ScheduleComponent } from './schedule.component';
 import { FormsModule } from '@angular/forms';
 import { AppService } from 'app/app.service';

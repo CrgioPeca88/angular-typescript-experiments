@@ -1,5 +1,5 @@
 import { TestBed, async } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
+import { By } from '@angular/common';
 import { RegistrationComponent } from './registration.component';
 import { FormsModule } from '@angular/forms';
 import { AppService } from 'app/app.service';
