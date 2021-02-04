@@ -7,7 +7,7 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 })
 export class CssResponsiveTestComponent implements OnInit {
 
-  @ViewChild('myAnimation') myAnimation;
+  @ViewChild('myAnimation', { static: true }) myAnimation;
   private _pos: number;
   private _id: any;
   private _running: boolean
