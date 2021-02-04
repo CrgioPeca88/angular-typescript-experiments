@@ -1,14 +1,25 @@
 <?xml version="1.0"?>
-<testsuite name="HeadlessChrome 88.0.4324 (Linux 0.0.0)" package="unit" timestamp="2021-02-04T21:02:28" id="0" hostname="CrgioPeca88Toshiba" tests="4" errors="0" failures="0" time="0.305">
+<testsuite name="Chrome Headless 88.0.4324.96 (Linux x86_64)" package="unit" timestamp="2021-02-04T21:22:05" id="0" hostname="CrgioPeca88Toshiba" tests="4" errors="0" failures="0" time="0.432">
   <properties>
     <property name="browser.fullName" value="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/88.0.4324.96 Safari/537.36"/>
   </properties>
-  <testcase name="RegistrationComponent should generate list on button click" time="0.128" classname="unit.RegistrationComponent"/>
-  <testcase name="ScheduleComponent should generate correct number of meals" time="0.133" classname="unit.ScheduleComponent"/>
-  <testcase name="ScheduleComponent should generate correct number of days" time="0.026" classname="unit.ScheduleComponent"/>
-  <testcase name="ScheduleComponent should not display anything if button is not clicked" time="0.018" classname="unit.ScheduleComponent"/>
+  <testcase name="RegistrationComponent should generate list on button click" time="0.302" classname="unit.RegistrationComponent"/>
+  <testcase name="ScheduleComponent should generate correct number of meals" time="0.081" classname="unit.ScheduleComponent"/>
+  <testcase name="ScheduleComponent should generate correct number of days" time="0.029" classname="unit.ScheduleComponent"/>
+  <testcase name="ScheduleComponent should not display anything if button is not clicked" time="0.02" classname="unit.ScheduleComponent"/>
   <system-out>
-    <![CDATA[HeadlessChrome 88.0.4324 (Linux 0.0.0) ERROR: 'ERROR', TypeError{}
+    <![CDATA[Chrome Headless 88.0.4324.96 (Linux x86_64) ERROR: 'ERROR', TypeError: Cannot read property 'next' of undefined
+TypeError: Cannot read property 'next' of undefined
+    at AppService.setNewData (http://localhost:9876/_karma_webpack_/src/app/app.service.ts:13:15)
+    at RegistrationComponent.generateList (http://localhost:9876/_karma_webpack_/src/app/registration/registration.component.ts:123:20)
+    at RegistrationComponent_Template_button_click_7_listener (ng:///RegistrationComponent.js:33:22)
+    at executeListenerWithErrorHandling (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:15266:1)
+    at wrapListenerIn_markDirtyAndPreventDefault (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:15301:1)
+    at HTMLButtonElement.<anonymous> (http://localhost:9876/_karma_webpack_/node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/platform-browser.js:582:1)
+    at ZoneDelegate.invokeTask (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-evergreen.js:399:1)
+    at AsyncTestZoneSpec.push.oSPV.AsyncTestZoneSpec.onInvokeTask (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/async-test.js:86:1)
+    at ProxyZoneSpec.push.tWgn.ProxyZoneSpec.onInvokeTask (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/proxy.js:145:1)
+    at ZoneDelegate.invokeTask (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-evergreen.js:398:1)
 
 ]]>
   </system-out>
