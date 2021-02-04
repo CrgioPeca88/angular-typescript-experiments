@@ -1,11 +1,11 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { RegistrationComponent } from './registration.component';
 import { FormsModule } from '@angular/forms';
 import { AppService } from 'app/app.service';
 
 describe('RegistrationComponent', () => {
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [
         RegistrationComponent
@@ -19,7 +19,7 @@ describe('RegistrationComponent', () => {
     }).compileComponents();
   }));
 
-  it('should generate list on button click', async(() => {
+  it('should generate list on button click', waitForAsync(() => {
     const fixture = TestBed.createComponent(RegistrationComponent);
     const sc = fixture.componentInstance;
     fixture.detectChanges();

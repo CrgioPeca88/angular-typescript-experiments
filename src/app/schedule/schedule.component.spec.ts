@@ -1,4 +1,4 @@
-import { TestBed, async, inject } from '@angular/core/testing';
+import { TestBed, inject, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { ScheduleComponent } from './schedule.component';
 import { FormsModule } from '@angular/forms';
@@ -6,7 +6,7 @@ import { AppService } from 'app/app.service';
 import { RowMealClients } from 'app/registration/registration.component';
 
 describe('ScheduleComponent', () => {
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [
         ScheduleComponent
@@ -20,7 +20,7 @@ describe('ScheduleComponent', () => {
     }).compileComponents();
   }));
 
-  it('should generate correct number of meals', async( inject( [AppService], (appService) => {
+  it('should generate correct number of meals', waitForAsync( inject( [AppService], (appService) => {
     const fixture = TestBed.createComponent(ScheduleComponent);
     const sc = fixture.componentInstance;
     const data = [{
@@ -91,7 +91,7 @@ describe('ScheduleComponent', () => {
     } );
   })));
 
-  it('should generate correct number of days', async( inject( [AppService], (appService) => {
+  it('should generate correct number of days', waitForAsync( inject( [AppService], (appService) => {
     const fixture = TestBed.createComponent(ScheduleComponent);
     const sc = fixture.componentInstance;
     const data = [{
@@ -161,7 +161,7 @@ describe('ScheduleComponent', () => {
     } );
   })));
 
-  it('should not display anything if button is not clicked', async(() => {
+  it('should not display anything if button is not clicked', waitForAsync(() => {
     const fixture = TestBed.createComponent(ScheduleComponent);
     const sc = fixture.componentInstance;
     fixture.detectChanges();
