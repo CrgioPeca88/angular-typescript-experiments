@@ -1,7 +1,10 @@
+// Dependencies
 import { Component, OnInit, OnDestroy, ChangeDetectionStrategy,
    ChangeDetectorRef } from '@angular/core';
 import { BehaviorSubject, Subscription } from 'rxjs';
-import { RowMealClients } from 'app/registration/registration.component';
+
+// Assets
+import { RowMealClients } from 'app/components/exercise1/common/registration/registration.component';
 import { AppService } from 'app/app.service';
 
 @Component({

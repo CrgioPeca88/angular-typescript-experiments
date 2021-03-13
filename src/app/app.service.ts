@@ -1,6 +1,9 @@
+// Dependencies
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { RowMealClients } from 'app/registration/registration.component';
+
+// Assets
+import { RowMealClients } from './components/exercise1/common/registration/registration.component';
 
 @Injectable()
 export class AppService {
