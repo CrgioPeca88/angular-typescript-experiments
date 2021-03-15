@@ -1,22 +1,18 @@
 <?xml version="1.0"?>
-<testsuite name="Chrome Headless 88.0.4324.96 (Linux x86_64)" package="unit" timestamp="2021-03-15T16:24:30" id="0" hostname="CrgioPeca88Toshiba" tests="8" errors="0" failures="0" time="0.445">
+<testsuite name="Chrome Headless 88.0.4324.96 (Linux x86_64)" package="unit" timestamp="2021-03-15T18:38:43" id="0" hostname="CrgioPeca88Toshiba" tests="8" errors="0" failures="0" time="0.443">
   <properties>
     <property name="browser.fullName" value="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/88.0.4324.96 Safari/537.36"/>
   </properties>
-  <testcase name="TimerComponent Should stop the timer at 0" time="0.074" classname="unit.TimerComponent"/>
-  <testcase name="TimerComponent Should render the initial UI" time="0.02" classname="unit.TimerComponent"/>
-  <testcase name="TimerComponent Should stop the on clicking the stop button" time="0.014" classname="unit.TimerComponent"/>
-  <testcase name="TimerComponent Should update the timer as expected" time="0.012" classname="unit.TimerComponent"/>
-  <testcase name="RegistrationComponent should generate list on button click" time="0.212" classname="unit.RegistrationComponent"/>
-  <testcase name="ScheduleComponent should not display anything if button is not clicked" time="0.031" classname="unit.ScheduleComponent"/>
-  <testcase name="ScheduleComponent should generate correct number of meals" time="0.047" classname="unit.ScheduleComponent"/>
-  <testcase name="ScheduleComponent should generate correct number of days" time="0.035" classname="unit.ScheduleComponent"/>
+  <testcase name="ScheduleComponent should not display anything if button is not clicked" time="0.078" classname="unit.ScheduleComponent"/>
+  <testcase name="ScheduleComponent should generate correct number of days" time="0.074" classname="unit.ScheduleComponent"/>
+  <testcase name="ScheduleComponent should generate correct number of meals" time="0.028" classname="unit.ScheduleComponent"/>
+  <testcase name="RegistrationComponent should generate list on button click" time="0.203" classname="unit.RegistrationComponent"/>
+  <testcase name="TimerComponent Should update the timer as expected" time="0.028" classname="unit.TimerComponent"/>
+  <testcase name="TimerComponent Should render the initial UI" time="0.008" classname="unit.TimerComponent"/>
+  <testcase name="TimerComponent Should stop the timer at 0" time="0.009" classname="unit.TimerComponent"/>
+  <testcase name="TimerComponent Should stop the on clicking the stop button" time="0.015" classname="unit.TimerComponent"/>
   <system-out>
-    <![CDATA[Chrome Headless 88.0.4324.96 (Linux x86_64) LOG: '50'
-,Chrome Headless 88.0.4324.96 (Linux x86_64) LOG: '40'
-,Chrome Headless 88.0.4324.96 (Linux x86_64) LOG: '40'
-,Chrome Headless 88.0.4324.96 (Linux x86_64) LOG: '40'
-,Chrome Headless 88.0.4324.96 (Linux x86_64) ERROR: 'ERROR', TypeError: Cannot read property 'next' of undefined
+    <![CDATA[Chrome Headless 88.0.4324.96 (Linux x86_64) ERROR: 'ERROR', TypeError: Cannot read property 'next' of undefined
 TypeError: Cannot read property 'next' of undefined
     at AppService.setNewData (http://localhost:9876/_karma_webpack_/webpack:/src/app/app.service.ts:16:15)
     at RegistrationComponent.generateList (http://localhost:9876/_karma_webpack_/webpack:/src/app/components/exercise1/common/registration/registration.component.ts:123:20)
@@ -28,6 +24,10 @@ TypeError: Cannot read property 'next' of undefined
     at AsyncTestZoneSpec.push.oSPV.AsyncTestZoneSpec.onInvokeTask (http://localhost:9876/_karma_webpack_/webpack:/node_modules/zone.js/dist/async-test.js:86:1)
     at ProxyZoneSpec.push.tWgn.ProxyZoneSpec.onInvokeTask (http://localhost:9876/_karma_webpack_/webpack:/node_modules/zone.js/dist/proxy.js:145:1)
     at ZoneDelegate.invokeTask (http://localhost:9876/_karma_webpack_/webpack:/node_modules/zone.js/dist/zone-evergreen.js:398:1)
+,Chrome Headless 88.0.4324.96 (Linux x86_64) LOG: '50'
+,Chrome Headless 88.0.4324.96 (Linux x86_64) LOG: '40'
+,Chrome Headless 88.0.4324.96 (Linux x86_64) LOG: '40'
+,Chrome Headless 88.0.4324.96 (Linux x86_64) LOG: '40'
 
 ]]>
   </system-out>

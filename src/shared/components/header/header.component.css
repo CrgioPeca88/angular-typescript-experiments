@@ -1,5 +1,6 @@
 .header-container {
   display: flex;
+  margin-bottom: 10px;
 }
 
 .header-text {
