@@ -15,6 +15,7 @@ import { CssResponsiveTestComponent } from './components/exercise1/common/css-re
 import { Exercise1Component } from './components/exercise1/exercise1.component';
 import { Exercise2Component } from './components/exercise2/exercise2.component';
 import { TimerComponent } from './components/exercise2/common/timer/timer.component';
+import { ColorPickerComponent } from './components/exercise2/common/color-picker/color-picker.component';
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import { TimerComponent } from './components/exercise2/common/timer/timer.compon
     ScheduleComponent,
     Exercise1Component,
     Exercise2Component,
-    TimerComponent
+    TimerComponent,
+    ColorPickerComponent
   ],
   providers: [AppService],
   bootstrap: [AppComponent]
