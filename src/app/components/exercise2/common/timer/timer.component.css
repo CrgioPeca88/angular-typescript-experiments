@@ -1,0 +1,24 @@
+.timer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0px;
+}
+
+.timer-value {
+  font-size: 50px;
+}
+
+.button {
+  background-color: #0bbd0b;
+  border: 1px solid black;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.button:hover {
+  font-weight: bold;
+}

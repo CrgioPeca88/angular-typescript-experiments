@@ -7,6 +7,10 @@ body figure {
   padding: 0;
 }
 
+body h2 {
+  margin: 0;
+}
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
