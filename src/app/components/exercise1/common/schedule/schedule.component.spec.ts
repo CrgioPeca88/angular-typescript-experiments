@@ -1,9 +1,12 @@
+// Dependencies
 import { TestBed, inject, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { ScheduleComponent } from './schedule.component';
 import { FormsModule } from '@angular/forms';
+
+// Assets
 import { AppService } from 'app/app.service';
-import { RowMealClients } from 'app/registration/registration.component';
+import { RowMealClients } from 'app/components/exercise1/common/registration/registration.component';
+import { ScheduleComponent } from './schedule.component';
 
 describe('ScheduleComponent', () => {
   beforeEach(waitForAsync(() => {
