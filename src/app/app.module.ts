@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 
 // Assets
 import { AppRoutingModule } from './app-routing.module';
+import { SharedModule } from 'shared/shared.module';
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
 import { RegistrationComponent } from './components/exercise1/common/registration/registration.component';
@@ -17,6 +18,7 @@ import { TimerComponent } from './components/exercise2/common/timer/timer.compon
 
 @NgModule({
   imports: [
+    SharedModule,
     AppRoutingModule,
     BrowserModule,
     FormsModule

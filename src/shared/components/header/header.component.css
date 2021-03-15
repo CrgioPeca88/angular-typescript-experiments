@@ -1,0 +1,28 @@
+.header-container {
+  display: flex;
+}
+
+.header-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  background-color: #d63535;
+  color: #fff;
+  font-family: 'Rock Salt', cursive;
+  font-size: 20px;
+}
+
+.header-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0px;
+  width: 20%;
+  background-color: #f7e03b;
+  overflow: hidden;
+}
+
+.header-logo img {
+  width: 35px;
+}
