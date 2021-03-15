@@ -62,19 +62,15 @@ describe('TimerComponent', () => {
 
   it('Should stop the on clicking the stop button', fakeAsync(() => {
     const {compiled, stopButton, fixture} = factory(50);
-    console.log(getByTestId('timer-value', compiled).innerHTML);
     expect(getByTestId('timer-value', compiled).innerHTML).toEqual('50');
     tick(10000);
     fixture.detectChanges();
-    console.log(getByTestId('timer-value', compiled).innerHTML);
     expect(getByTestId('timer-value', compiled).innerHTML).toEqual('40');
     stopButton.click();
     fixture.detectChanges();
-    console.log(getByTestId('timer-value', compiled).innerHTML);
     expect(getByTestId('timer-value', compiled).innerHTML).toEqual('40');
     tick(10000);
     fixture.detectChanges();
-    console.log(getByTestId('timer-value', compiled).innerHTML);
     expect(getByTestId('timer-value', compiled).innerHTML).toEqual('40');
     stopButton.click();
     discardPeriodicTasks();
