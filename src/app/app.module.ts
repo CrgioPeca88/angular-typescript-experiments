@@ -16,6 +16,7 @@ import { Exercise1Component } from './components/exercise1/exercise1.component';
 import { Exercise2Component } from './components/exercise2/exercise2.component';
 import { TimerComponent } from './components/exercise2/common/timer/timer.component';
 import { ColorPickerComponent } from './components/exercise2/common/color-picker/color-picker.component';
+import { Exercise3Component } from './components/exercise3/exercise3.component';
 
 @NgModule({
   imports: [
@@ -33,7 +34,8 @@ import { ColorPickerComponent } from './components/exercise2/common/color-picker
     Exercise1Component,
     Exercise2Component,
     TimerComponent,
-    ColorPickerComponent
+    ColorPickerComponent,
+    Exercise3Component
   ],
   providers: [AppService],
   bootstrap: [AppComponent]
