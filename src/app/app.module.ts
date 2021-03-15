@@ -17,6 +17,9 @@ import { Exercise2Component } from './components/exercise2/exercise2.component';
 import { TimerComponent } from './components/exercise2/common/timer/timer.component';
 import { ColorPickerComponent } from './components/exercise2/common/color-picker/color-picker.component';
 import { Exercise3Component } from './components/exercise3/exercise3.component';
+import { CartShopComponent } from './components/exercise3/cart-shop/cart-shop.component';
+import { CartComponent } from './components/exercise3/cart-shop/components/cart/cart.component';
+import { ProductListComponent } from './components/exercise3/cart-shop/components/product-list/product-list.component';
 
 @NgModule({
   imports: [
@@ -35,7 +38,10 @@ import { Exercise3Component } from './components/exercise3/exercise3.component';
     Exercise2Component,
     TimerComponent,
     ColorPickerComponent,
-    Exercise3Component
+    Exercise3Component,
+    CartShopComponent,
+    CartComponent,
+    ProductListComponent
   ],
   providers: [AppService],
   bootstrap: [AppComponent]
