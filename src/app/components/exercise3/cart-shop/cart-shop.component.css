@@ -4,10 +4,11 @@
 }
 
 .cs-product-list {
-  width: 80%;
+  width: 75%;
 }
 
 .cs-cart {
-  border: 1px solid magenta;
-  width: 20%;
+  box-shadow: 0px 0px 10px grey;
+  width: 25%;
+  padding: 0px 10px;
 }

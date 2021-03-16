@@ -1,0 +1,37 @@
+.cart-container .cart-title {
+  margin: 10px auto;
+  display: table;
+  font-family: 'Rock Salt', cursive;
+}
+
+.cart-container .cart-title h3 {
+  margin: 0;
+}
+
+.cart-container .cart-list-title {
+  margin: 20px 0px;
+}
+
+.cart-container .cart-list-title h4 {
+  font-weight: bold;
+}
+
+.cart-container .cart-list-elements h4 {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px
+}
+
+.cart-container .cart-list-elements .material-icons {
+  color: #3d943d;
+}
+
+.cart-container .cart-list-elements .quantity-chip {
+  background-color: #d73d35;
+  color: #fff;
+  font-weight: bold;
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 15px;
+}

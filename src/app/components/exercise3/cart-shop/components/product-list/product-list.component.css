@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  gap: 50px;
+  gap: 20px;
 }
 
 .product-item {
@@ -19,7 +19,7 @@
 }
 
 .product-item-info .product-image {
-  width: 100%;
+  width: 70%;
 }
 
 .product-item-info .card-text {
