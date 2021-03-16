@@ -1,0 +1,14 @@
+<div class="movie-list-container">
+  <section class="section-search">
+    <input type="number" [(ngModel)]="year" placeholder="Year" data-test-id="app-input"/>
+    <button data-test-id="submit-button" (click)="searchMovies()">Search</button>
+  </section>
+
+  <ul *ngIf="moviesList && moviesList.length > 0" data-test-id="movieList">
+    <li class="movie-text" *ngFor="let movie of moviesList">{{movie.Title}}</li>
+  </ul>
+  <div class="text-primary" data-test-id="no-result"
+       *ngIf="moviesList && moviesList.length === 0">
+       No Results Found
+  </div>
+</div>

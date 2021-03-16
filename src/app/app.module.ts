@@ -2,6 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from "@angular/common/http";
 
 // Assets
 import { AppRoutingModule } from './app-routing.module';
@@ -21,13 +22,15 @@ import { CartShopComponent } from './components/exercise3/cart-shop/cart-shop.co
 import { CartComponent } from './components/exercise3/cart-shop/components/cart/cart.component';
 import { ProductListComponent } from './components/exercise3/cart-shop/components/product-list/product-list.component';
 import { Exercise4Component } from './components/exercise4/exercise4.component';
+import { MovieListComponent } from './components/exercise4/movie-list/movie-list.component';
 
 @NgModule({
   imports: [
     SharedModule,
     AppRoutingModule,
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   declarations: [
     AppComponent,
@@ -43,7 +46,8 @@ import { Exercise4Component } from './components/exercise4/exercise4.component';
     CartShopComponent,
     CartComponent,
     ProductListComponent,
-    Exercise4Component
+    Exercise4Component,
+    MovieListComponent
   ],
   providers: [AppService],
   bootstrap: [AppComponent]

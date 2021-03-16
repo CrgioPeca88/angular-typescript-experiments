@@ -1,0 +1,45 @@
+.movie-list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.movie-list-container .section-search input {
+  width: 70px;
+  padding: 5px;
+  font-size: 15px;
+  margin-right: 10px;
+  border: 2px solid #3d943d;
+  border-radius: 3px;
+  outline: none;
+}
+
+.movie-list-container .section-search button {
+  padding: 7px;
+  background-color: #4caf50;
+  border-radius: 3px;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  width: 65px;
+}
+
+.movie-list-container .section-search button:hover {
+  font-weight: bold;
+  box-shadow: 0px 0px 5px #000;
+}
+
+.movie-list-container .movie-text {
+  font-size: 20px;
+  text-shadow: 0px 0px 20px #3d943d;
+}
+
+.movie-list-container .text-primary {
+  font-family: 'Rock Salt', cursive;
+  color: #3d943d;
+  font-size: 25px;
+  text-shadow: 2px -1px 16px #828282;
+}
