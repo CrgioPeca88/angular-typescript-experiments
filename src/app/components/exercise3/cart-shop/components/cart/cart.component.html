@@ -7,7 +7,12 @@
     <hr/>
   </div>
   <div class="cart-list-elements" *ngFor="let cartItem of cart?.items; let idx = index;" id="cart-item-{{idx}}">
-    <h4><span class="material-icons">add_shopping_cart</span> {{cartItem.item}} <strong>/</strong> <span class="quantity-chip">{{cartItem.quantity}}</span></h4>
+    <h4>
+      <span class="material-icons">add_shopping_cart</span>
+      <span data-test-id="cart-item-name">{{cartItem.item}}</span>
+      <strong>/</strong>
+      <span data-test-id="cart-item-quantity" class="quantity-chip">{{cartItem.quantity}}</span>
+    </h4>
     <hr/>
   </div>
 </section>

@@ -5,7 +5,7 @@ import {FormsModule} from "@angular/forms";
 
 // Assets
 import {CartShopComponent, PRODUCTS} from './cart-shop.component';
-import {ProductListComponent} from "./component/product-list/product-list.component";
+import {ProductListComponent} from "./components/product-list/product-list.component";
 import {CartComponent} from "./components/cart/cart.component";
 
 describe('CartShopComponent', () => {
