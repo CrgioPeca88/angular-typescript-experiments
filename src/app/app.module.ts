@@ -20,6 +20,7 @@ import { Exercise3Component } from './components/exercise3/exercise3.component';
 import { CartShopComponent } from './components/exercise3/cart-shop/cart-shop.component';
 import { CartComponent } from './components/exercise3/cart-shop/components/cart/cart.component';
 import { ProductListComponent } from './components/exercise3/cart-shop/components/product-list/product-list.component';
+import { Exercise4Component } from './components/exercise4/exercise4.component';
 
 @NgModule({
   imports: [
@@ -41,7 +42,8 @@ import { ProductListComponent } from './components/exercise3/cart-shop/component
     Exercise3Component,
     CartShopComponent,
     CartComponent,
-    ProductListComponent
+    ProductListComponent,
+    Exercise4Component
   ],
   providers: [AppService],
   bootstrap: [AppComponent]
