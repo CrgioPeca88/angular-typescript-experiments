@@ -1,8 +1,13 @@
 .shop-component {
-  background: linear-gradient(to bottom, #fff 0%, #f3f7f7 100%);
+  display: flex;
+  padding: 50px 10px 50px 0px;
 }
 
-.shop-component app-product-list {
-  flex: 1 1 100%;
-  min-height: calc(100vh - 64px);
+.cs-product-list {
+  width: 80%;
+}
+
+.cs-cart {
+  border: 1px solid magenta;
+  width: 20%;
 }

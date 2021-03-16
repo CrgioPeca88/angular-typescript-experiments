@@ -1,7 +1,7 @@
-<div class="layout-row shop-component">
+<div class="shop-component">
   <cs-product-list [products]="products"
                     (onAddToCart)="addToCart($event)"
                     (onQuantityUpdate)="updateCart($event)"
-                    class="flex-70"></cs-product-list>
-  <cs-cart class="flex-30" [cart]="cart"></cs-cart>              
+                    class="cs-product-list"></cs-product-list>
+  <cs-cart class="cs-cart" [cart]="cart"></cs-cart>
 </div>
