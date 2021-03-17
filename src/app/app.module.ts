@@ -23,6 +23,7 @@ import { CartComponent } from './components/exercise3/cart-shop/components/cart/
 import { ProductListComponent } from './components/exercise3/cart-shop/components/product-list/product-list.component';
 import { Exercise4Component } from './components/exercise4/exercise4.component';
 import { MovieListComponent } from './components/exercise4/movie-list/movie-list.component';
+import { CssSpinnerComponent } from './components/exercise1/common/css-spinner/css-spinner.component';
 
 @NgModule({
   imports: [
@@ -47,7 +48,8 @@ import { MovieListComponent } from './components/exercise4/movie-list/movie-list
     CartComponent,
     ProductListComponent,
     Exercise4Component,
-    MovieListComponent
+    MovieListComponent,
+    CssSpinnerComponent
   ],
   providers: [AppService],
   bootstrap: [AppComponent]
