@@ -24,6 +24,7 @@ import { ProductListComponent } from './components/exercise3/cart-shop/component
 import { Exercise4Component } from './components/exercise4/exercise4.component';
 import { MovieListComponent } from './components/exercise4/movie-list/movie-list.component';
 import { CssSpinnerComponent } from './components/exercise1/common/css-spinner/css-spinner.component';
+import { Exercise5Component } from './components/exercise5/exercise5.component';
 
 @NgModule({
   imports: [
@@ -49,7 +50,8 @@ import { CssSpinnerComponent } from './components/exercise1/common/css-spinner/c
     ProductListComponent,
     Exercise4Component,
     MovieListComponent,
-    CssSpinnerComponent
+    CssSpinnerComponent,
+    Exercise5Component
   ],
   providers: [AppService],
   bootstrap: [AppComponent]

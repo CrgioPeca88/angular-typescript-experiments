@@ -10,7 +10,7 @@
   height: 50px;
   border: 4px solid rgba(0, 0, 0, 0.2);
   border-radius: 50%;
-  border-left-color: #3d943d;
+  border-left-color: #026cb3;
   animation: spin 1s linear infinite;
   margin-right: 15px;
 }

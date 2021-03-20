@@ -1,4 +1,4 @@
-## Angular-Javascript exercises:
+## Angular-Typescript exercises:
 
 ### 1). Angular Test:
 
