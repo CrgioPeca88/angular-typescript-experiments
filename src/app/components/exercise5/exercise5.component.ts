@@ -14,6 +14,12 @@ type User = {
   nickName: string,
   age: number
 }
+type Credentials = {
+  token: string,
+  role?: string
+}
+type UserLogged = User & Credentials;
+type ITwoTypes = <X,Y>(x:X, y:Y) => X & Y;
 
 @Component({
   selector: 'app-exercise5',
@@ -65,6 +71,7 @@ export class Exercise5Component {
   }
 
   private aliasTest(): void {
+    // ALIAS - EXPERIMENT
     const sumar: OperationMath = (n1: number, n2: number) => {
       return n1 + n2;
     }
@@ -79,6 +86,30 @@ export class Exercise5Component {
       age: 88
     }
     console.log(`%c User alias => ${user1.nickName} - ${user1.email}`, `border: 1px solid #026cb3; color: #026cb3`);
+    // ALIAS INTERSECTION - EXPERIMENT
+    const intersectionUser: UserLogged = {
+      lastName: "Peca",
+      email: "cp@email.com",
+      nickName: "CrgioPeca88",
+      age: 88,
+      token: "747832467438734uhfhj.747834.bhjdhjbfdbhj"
+    }
+    console.log(`%c Alias Intersection => ${intersectionUser.nickName} - ${intersectionUser.token}`, `background-color: yellow; color: black`);
+    // ALIAS INTERSECTION + GENERIC TYPES - EXPERIMENT
+    const compose: ITwoTypes = <X, Y>(typeX: X, typeY: Y): X & Y => ({...typeX, ...typeY});
+    const user: User = {
+      name: "Angiesita",
+      lastName: "GR",
+      email: "angiesita@email.com",
+      nickName: "angiesita10",
+      age: 10
+    }
+    const credentials: Credentials = {
+      token: "34732987342987.bfdsbhjbjhfds.7834278342897",
+      role: "User"
+    }
+    const userLogged: UserLogged = compose<User, Credentials>(user, credentials);
+    console.log(`%c Alias Intersection + Generic Types =>`, `background-color: black; color: yellow`, userLogged);
   }
 
 }
