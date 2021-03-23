@@ -32,6 +32,7 @@ export class Exercise5Component {
   ngOnInit() {
     this.patternTest();
     this.aliasTest();
+    this.keyofTest();
   }
 
   private patternTest(): void {
@@ -110,6 +111,51 @@ export class Exercise5Component {
     }
     const userLogged: UserLogged = compose<User, Credentials>(user, credentials);
     console.log(`%c Alias Intersection + Generic Types =>`, `background-color: black; color: yellow`, userLogged);
+    // ALIAS UNION + GUARDS - EXPERIMENT
+    interface Vehicle {
+      vehicleType: string;
+      brand: string;
+      model: string;
+      start({vehicleType, brand, model}): void;
+    }
+    interface Motorcycle extends Vehicle {
+      quickshifter: boolean
+    }
+    interface Car extends Vehicle {
+      trunkLength: number
+    }
+
+    const getMotorcycle: () => Motorcycle = () => ({
+      vehicleType: "Moto",
+      brand: "Kawasaki",
+      model: "Ninja ZX10R",
+      quickshifter: true,
+      start: ({vehicleType, brand, model}) => console.log(`Starting... ${vehicleType} ${brand} ${model}`)
+    });
+
+    const getCar: () => Car = () => ({
+      vehicleType: "Car",
+      brand: "Ford",
+      model: "Fsuion",
+      trunkLength: 100,
+      start: ({vehicleType, brand, model}) => console.log(`Starting... ${vehicleType} ${brand} ${model}`)
+    });
+
+    const getRandomVehicle: () => Motorcycle | Car = (): Motorcycle | Car => {
+      return (Math.random() * 10 > 5) ? getMotorcycle() : getCar();
+    }
+
+    const newVehicle: Vehicle = getRandomVehicle();
+
+    if(`quickshifter` in newVehicle) {
+      console.log(`%c Alias Union + Guards => el vehiculo es una Moto`, `background-color: red; color: white`, newVehicle);
+    } else {
+      console.log(`%c Alias Union + Guards => el vehiculo es un Carro`, `background-color: red; color: white`, newVehicle);
+    }
+  }
+
+  private keyofTest(): void {
+    
   }
 
 }
