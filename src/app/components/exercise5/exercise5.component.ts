@@ -33,6 +33,7 @@ export class Exercise5Component {
     this.patternTest();
     this.aliasTest();
     this.keyofTest();
+    this.indexType();
   }
 
   private patternTest(): void {
@@ -167,7 +168,7 @@ export class Exercise5Component {
     console.log(`%c Keyof => day =`, `background-color: gray; color: greenyellow`, day);
 
     const showProps = <T>(obj: T, ...keys: (keyof T)[]): void => {
-      keys.forEach(key => console.log(`%c Keyof => key =`, `background-color: greenyellow; color: gray`, obj[key]));
+      keys.forEach(key => console.log(`%c Keyof => key =`, `background-color: gray; color: greenyellow`, obj[key]));
     }
     const developer = {
       type: 'Frontend',
@@ -175,6 +176,25 @@ export class Exercise5Component {
       seniority: "Junior"
     }
     showProps(developer, 'type', 'languajes');
+  }
+
+  private indexType(): void {
+    const developer = {
+      type: 'Frontend',
+      languajes: ['Js', 'Typescript', 'CSS'],
+      seniority: "Junior"
+    }
+    type DeveloperType = (typeof developer)['type'];
+    const dType: DeveloperType = 'Front';
+    console.log(`%c IndexType => DeveloperType =`, `background-color: greenyellow; color: black`, dType);
+    interface Dev {
+      type: string;
+      languajes: string[];
+      seniority: string;
+    }
+    type DevType = Dev['type'];
+    const dType2: DevType = 'Back'
+    console.log(`%c I IndexType => I DeveloperType =`, `background-color: greenyellow; color: black`, dType2);
   }
 
 }
