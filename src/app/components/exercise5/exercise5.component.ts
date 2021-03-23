@@ -155,7 +155,26 @@ export class Exercise5Component {
   }
 
   private keyofTest(): void {
-    
+    interface Week {
+      monday: string;
+      tuesday: string;
+      wednesday: string;
+      thursday: string;
+      friday: string;
+    }
+    type Day = keyof Week;
+    const day: Day = 'monday';
+    console.log(`%c Keyof => day =`, `background-color: gray; color: greenyellow`, day);
+
+    const showProps = <T>(obj: T, ...keys: (keyof T)[]): void => {
+      keys.forEach(key => console.log(`%c Keyof => key =`, `background-color: greenyellow; color: gray`, obj[key]));
+    }
+    const developer = {
+      type: 'Frontend',
+      languajes: ['Js', 'Typescript', 'CSS'],
+      seniority: "Junior"
+    }
+    showProps(developer, 'type', 'languajes');
   }
 
 }
