@@ -37,6 +37,7 @@ export class Exercise5Component {
     this.mappedType();
     this.typesConditionals();
     this.recursivity();
+    this.utilitiesReadOnly();
   }
 
   private patternTest(): void {
@@ -246,6 +247,58 @@ export class Exercise5Component {
 
     console.log(`%c Recursivity => classroom =`, `background-color: cyan; color: black`, classroom);
 
+  }
+
+  private utilitiesReadOnly(): void {
+    interface Developer {
+      name: string;
+      languajes: {
+        backend: string[],
+        frontend: string[]
+      };
+      devopsTools: {
+        versionControl: string[];
+        ci: string[];
+      };
+    }
+
+    type RODeveloper = Readonly<Developer>;
+    type myRO<T> = {
+      readonly [P in keyof T]: myRO<T[P]>;
+    }
+
+    let dev: RODeveloper = {
+      name: 'Crgio Peca',
+      languajes: {
+        backend: ['scala', 'nodejs'],
+        frontend: ['javascript', 'angular']
+      },
+      devopsTools: {
+        versionControl: ['git'],
+        ci: ['jenkins']
+      }
+    }
+
+    let dev2: myRO<Developer> = {
+      name: 'Crgio Peca',
+      languajes: {
+        backend: ['scala', 'nodejs'],
+        frontend: ['javascript', 'angular']
+      },
+      devopsTools: {
+        versionControl: ['git'],
+        ci: ['jenkins']
+      }
+    }
+
+    //dev.name = 'Peca 88'; <-- Readonly Error
+    dev.languajes.frontend.push('react');
+
+    //dev2.name = 'Peca 88'; <-- Readonly Error
+    //dev2.languajes.frontend = ['Svelte', 'Css']; <-- Readonly Error
+    //dev2.languajes.frontend.push('react'); <-- Readonly Error
+
+    console.log(`%c Utilities readonly => developer =`, `background-color: pink; color: black`, dev);
   }
 
 }
