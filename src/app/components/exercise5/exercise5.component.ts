@@ -37,8 +37,9 @@ export class Exercise5Component {
     this.mappedType();
     this.typesConditionals();
     this.recursivity();
-    this.utilitiesReadOnly();
+    this.utilitiesReadonly();
     this.utilitiesPartial();
+    this.utilitiesRequired();
   }
 
   private patternTest(): void {
@@ -250,7 +251,7 @@ export class Exercise5Component {
 
   }
 
-  private utilitiesReadOnly(): void {
+  private utilitiesReadonly(): void {
     interface Developer {
       name: string;
       languajes: {
@@ -337,6 +338,33 @@ export class Exercise5Component {
     } as Developer;
 
     console.log(`%c Utilities partial => developer =`, `background-color: purple; color: white`, developer);
+  }
+
+  private utilitiesRequired(): void {
+    interface PartialDeveloper {
+      name?: string;
+      languajes?: string[];
+      seniority?: 'jr' | 'sr';
+    }
+
+    type DeveloperRequired = Required<PartialDeveloper>;
+
+    const skillsDevData: PartialDeveloper = {
+      languajes: ['js', 'scala'],
+      seniority: 'jr'
+    };
+
+    const infoDevData: PartialDeveloper = {
+      name: 'Crgio Peca Required'
+    };
+
+    const dev: DeveloperRequired = {
+      ...skillsDevData,
+      ...infoDevData
+    } as DeveloperRequired;
+
+    console.log(`%c Utilities required => developer =`, `background-color: green; color: white`, dev);
+
   }
 
 }
