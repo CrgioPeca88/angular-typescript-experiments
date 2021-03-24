@@ -38,6 +38,7 @@ export class Exercise5Component {
     this.typesConditionals();
     this.recursivity();
     this.utilitiesReadOnly();
+    this.utilitiesPartial();
   }
 
   private patternTest(): void {
@@ -268,7 +269,7 @@ export class Exercise5Component {
     }
 
     let dev: RODeveloper = {
-      name: 'Crgio Peca',
+      name: 'Crgio Peca Readonly',
       languajes: {
         backend: ['scala', 'nodejs'],
         frontend: ['javascript', 'angular']
@@ -299,6 +300,43 @@ export class Exercise5Component {
     //dev2.languajes.frontend.push('react'); <-- Readonly Error
 
     console.log(`%c Utilities readonly => developer =`, `background-color: pink; color: black`, dev);
+  }
+
+  private utilitiesPartial(): void {
+    interface Developer {
+      name: string;
+      languajes: {
+        backend: string[],
+        frontend: string[]
+      };
+      devopsTools: {
+        versionControl: string[];
+        ci: string[];
+      };
+    }
+
+    type PartialDeveloper = Partial<Developer>;
+
+    const devopsTools: PartialDeveloper = {
+      devopsTools: {
+        versionControl: ['git'],
+        ci: ['jenkins']
+      }
+    };
+    const languajes: PartialDeveloper = {
+      languajes: {
+        backend: ['scala', 'nodejs'],
+        frontend: ['javascript', 'angular']
+      }
+    };
+    const devInfo: PartialDeveloper = {
+      name: 'CrgioPeca Partial'
+    };
+    const developer: Developer = {
+      ...devInfo, ...languajes, ...devopsTools
+    } as Developer;
+
+    console.log(`%c Utilities partial => developer =`, `background-color: purple; color: white`, developer);
   }
 
 }
