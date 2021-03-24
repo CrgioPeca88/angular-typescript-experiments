@@ -36,6 +36,7 @@ export class Exercise5Component {
     this.indexType();
     this.mappedType();
     this.typesConditionals();
+    this.recursivity();
   }
 
   private patternTest(): void {
@@ -217,7 +218,33 @@ export class Exercise5Component {
     type Palette<T extends Theme> = T extends 'day' ? LigthColors : DarkColors;
 
     const dayPrimaryColor: Palette<'day'> = 'greenyellow';
-    console.log(`%c Types Cinditionals => dayPrimaryColor =`, `background-color: magenta; color: black`, dayPrimaryColor);
+    console.log(`%c Types Conditionals => dayPrimaryColor =`, `background-color: magenta; color: black`, dayPrimaryColor);
+  }
+
+  private recursivity(): void {
+    type IterableList<T> = T & { next?: IterableList<T> }
+
+    interface Student {
+      name: string;
+    }
+
+    let classroom: IterableList<Student> = {
+      name: 'name1',
+      next: {
+        name: 'name2',
+        next: {
+          name: 'name3',
+          next: {
+            name: 'name4',
+            next: {
+              name: 'name5'
+            }
+          }
+        }
+      }
+    }
+
+    console.log(`%c Recursivity => classroom =`, `background-color: cyan; color: black`, classroom);
 
   }
 
