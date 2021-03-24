@@ -34,6 +34,8 @@ export class Exercise5Component {
     this.aliasTest();
     this.keyofTest();
     this.indexType();
+    this.mappedType();
+    this.typesConditionals();
   }
 
   private patternTest(): void {
@@ -195,6 +197,28 @@ export class Exercise5Component {
     type DevType = Dev['type'];
     const dType2: DevType = 'Back'
     console.log(`%c I IndexType => I DeveloperType =`, `background-color: greenyellow; color: black`, dType2);
+  }
+
+  private mappedType(): void {
+    // Create a type from another element properties
+    interface Dev {
+      type: string;
+      languajes: string[];
+      seniority: string;
+    }
+    // ???
+  }
+
+  private typesConditionals(): void {
+    type DarkColors = 'black' | 'gray' | 'darkred';
+    type LigthColors = 'greenyellow' | 'white' | 'cyan' | 'magenta';
+    type Theme = 'day' | 'night'
+
+    type Palette<T extends Theme> = T extends 'day' ? LigthColors : DarkColors;
+
+    const dayPrimaryColor: Palette<'day'> = 'greenyellow';
+    console.log(`%c Types Cinditionals => dayPrimaryColor =`, `background-color: magenta; color: black`, dayPrimaryColor);
+
   }
 
 }
