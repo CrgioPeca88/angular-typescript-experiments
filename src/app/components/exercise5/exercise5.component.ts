@@ -40,6 +40,8 @@ export class Exercise5Component {
     this.utilitiesReadonly();
     this.utilitiesPartial();
     this.utilitiesRequired();
+    this.utilitiesExtraxtExclude();
+    this.utilitiesRecord();
   }
 
   private patternTest(): void {
@@ -365,6 +367,28 @@ export class Exercise5Component {
 
     console.log(`%c Utilities required => developer =`, `background-color: green; color: white`, dev);
 
+  }
+
+  private utilitiesExtraxtExclude(): void {
+    type Week = 'monday' | 'tuesday' | 'wednesday' | 'thursday' | 'friday' | 'saturday' | 'sunday';
+    type WorkDays = Exclude<Week, 'saturday' | 'sunday'>
+    type Weekend = Extract<Week, 'saturday' | 'sunday'>
+
+    const wd: WorkDays = 'friday';
+    const wkd: Weekend = 'saturday';
+
+    console.log(`%c Utilities Extract - Exclude => Work Day & Weekend Day =`, `background-color: darkred; color: white`, `${wd} - ${wkd}`);
+  }
+
+  private utilitiesRecord(): void {
+    type Sizes = 'small' | 'medium' | 'large';
+    type EurSizes = Record<Sizes, string>;
+    type UkSizes = Record<Sizes, number>;
+
+    const eurSizes: EurSizes = { small: "s", medium: 'm', large: 'l' };
+    const ukSizes: UkSizes = { small: 8, medium: 10, large: 12 };
+
+    console.log(`%c Utilities Record => Eur size & UK size =`, `background-color: blue; color: gold`, `${eurSizes} - ${ukSizes}`);
   }
 
 }
