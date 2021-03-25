@@ -38,7 +38,7 @@ export class MovieListComponent implements OnInit {
   private getMoviesFromAPI(year: number): Observable<Movie[]> {
     return this.http.get<ApiResponse>(`https://jsonmock.hackerrank.com/api/movies?Year=${year}`).pipe(
       map(apiResponse => apiResponse.data)
-    )
+    );
   }
 
   public searchMovies(): void {
