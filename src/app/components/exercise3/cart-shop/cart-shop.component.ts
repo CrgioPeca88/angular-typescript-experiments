@@ -1,7 +1,7 @@
 // Dependencies
 import { Component } from '@angular/core';
 import { Observable, of, pipe, from } from 'rxjs';
-import { map, filter, switchMap, isEmpty } from 'rxjs/operators';
+import { map, filter, exhaustMap, isEmpty } from 'rxjs/operators';
 
 // Assets
 import { Cart, CartItem, Product } from "./models";
@@ -113,9 +113,9 @@ export class CartShopComponent {
 
   addToCart(product: Product) {
       of(null).pipe(
-        switchMap(empty => this.validateQuantity(product, 1)),
-        switchMap(p => this.validateProductDoesntExist(p, this.cart.items)),
-        switchMap(pde   => this.addItemToCart(pde, product))
+        exhaustMap(empty => this.validateQuantity(product, 1)),
+        exhaustMap(p => this.validateProductDoesntExist(p, this.cart.items)),
+        exhaustMap(pde   => this.addItemToCart(pde, product))
       ).subscribe((product: Product) => {
         this.cart.items.push(this.transFromProductToCartItem(product));
       }, (error: Error) => {
@@ -125,9 +125,9 @@ export class CartShopComponent {
 
   updateCart(product: Product) {
     of(null).pipe(
-      switchMap(empty => this.validateQuantity(product, 0)),
-      switchMap(p => this.validateProductDoesntExist(p, this.cart.items)),
-      switchMap(pde => this.addItemUpdatedToCart(pde, product, this.cart.items))
+      exhaustMap(empty => this.validateQuantity(product, 0)),
+      exhaustMap(p => this.validateProductDoesntExist(p, this.cart.items)),
+      exhaustMap(pde => this.addItemUpdatedToCart(pde, product, this.cart.items))
     ).subscribe((cartItemsUpdated: CartItem[]) => {
       this.cart.items = cartItemsUpdated;
     });
