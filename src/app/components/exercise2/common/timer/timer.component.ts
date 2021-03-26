@@ -39,4 +39,42 @@ export class TimerComponent implements OnInit {
     }
   }
 
+  // ============Solution without BehaviorSubject only with Subscription========
+  /**
+  export class TimerComponent implements OnInit {
+    @Input() initial: number;
+    public timer: number;
+    private paused: boolean;
+    private clock: Subscription;
+
+    constructor() {
+      this.paused = false;
+    }
+
+    ngOnInit() {
+      this.timer = this.initial;
+      this.clock = this.runClock(this.timer);
+    }
+
+    private runClock(initialValue: number): Subscription {
+      return interval(1000).pipe(
+        map((intN: number) => this.timer - 1),
+        take(initialValue)
+      ).subscribe((dn: number) => {
+        this.timer = dn;
+      });
+    }
+
+    public stopTimer(): void {
+      this.paused = !this.paused;
+      if(this.paused) {
+        this.clock.unsubscribe();
+      } else {
+        this.clock = this.runClock(this.timer);
+      }
+    }
+
+  }
+  */
+
 }
