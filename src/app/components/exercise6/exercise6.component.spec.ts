@@ -1,8 +1,7 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-import { AppModule } from './app.module';
+import { Exercise6Component } from './exercise6.component';
 import {By} from '@angular/platform-browser';
 import {DebugElement} from '@angular/core';
 import { TeamList } from './components/team-list/team-list.component';
@@ -10,11 +9,11 @@ import { TeamComponent } from './components/team-component/team-component.compon
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TeamsChannelService } from './services/teams-channels.service';
 
-describe('AppComponent', () => {
+describe('Exercise6Component', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
-          AppComponent, TeamList, TeamComponent
+        Exercise6Component, TeamList, TeamComponent
       ],
       imports: [
         FormsModule,
@@ -28,7 +27,7 @@ describe('AppComponent', () => {
   });
 
   it('should create the Teams and Channels listing app which contains the teams', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
+    const fixture = TestBed.createComponent(Exercise6Component);
     const header: DebugElement = fixture.debugElement.query(By.css('.teams-list'));
     fixture.detectChanges();
     expect(header.nativeElement.innerHTML).toContain('team-name');
