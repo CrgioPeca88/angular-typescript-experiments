@@ -1,0 +1,25 @@
+/*.add-channel {
+    margin: 5%;
+}*/
+
+li {
+  height: auto;
+  width: auto;
+}
+
+.team-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.team-section {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.button-app {
+  padding: 1px 8px;
+  margin-left: 5px;
+}

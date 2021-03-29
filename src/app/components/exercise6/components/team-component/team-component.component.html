@@ -1,0 +1,22 @@
+<section class="team-container" *ngIf="team">
+  <div class="team-section">
+    <div class="team-input">
+      <span class="team-name">{{team.name}}</span>
+      <button class="sort button-app" (click)="sort()">&#8597;</button>
+    </div>
+    <span class="add-channel">
+      <form [formGroup]="channelFormGroup">
+        <input formControlName="channel" type="text" placeholder="Channel name"/>
+        <button class="button-app" [disabled]="channelFormGroup.controls.channel.invalid" (click)="addChannel(originalState.channels)">&#8853;</button>
+      </form>
+    </span>
+  </div>
+  <div class="channel-section">
+    <ul>
+        <li *ngFor="let channel of team && team.channels; let i = index" class="channel-name">
+            <span>{{channel.name}}</span>
+            <button class="button-app" (click)="removeChannel(channel)">&#8854;</button>
+        </li>
+    </ul>
+  </div>
+</section>

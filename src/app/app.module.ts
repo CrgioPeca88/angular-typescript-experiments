@@ -1,7 +1,7 @@
 // Dependencies
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
 
 // Assets
@@ -26,6 +26,8 @@ import { MovieListComponent } from './components/exercise4/movie-list/movie-list
 import { CssSpinnerComponent } from './components/exercise1/common/css-spinner/css-spinner.component';
 import { Exercise5Component } from './components/exercise5/exercise5.component';
 import { Exercise6Component } from './components/exercise6/exercise6.component';
+import { TeamList } from './components/exercise6/components/team-list/team-list.component';
+import { TeamComponent } from './components/exercise6/components/team-component/team-component.component';
 
 @NgModule({
   imports: [
@@ -33,7 +35,8 @@ import { Exercise6Component } from './components/exercise6/exercise6.component';
     AppRoutingModule,
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   declarations: [
     AppComponent,
@@ -53,7 +56,9 @@ import { Exercise6Component } from './components/exercise6/exercise6.component';
     MovieListComponent,
     CssSpinnerComponent,
     Exercise5Component,
-    Exercise6Component
+    Exercise6Component,
+    TeamList,
+    TeamComponent
   ],
   providers: [AppService],
   bootstrap: [AppComponent]

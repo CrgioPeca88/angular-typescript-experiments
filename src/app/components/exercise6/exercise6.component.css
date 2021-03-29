@@ -1,0 +1,9 @@
+.main-section {
+    font-size: 15px;
+    background: #d3f5f2;
+    padding: 20px;
+}
+
+.main-section__title {
+  margin: 0px 0px 20px 0px;
+}

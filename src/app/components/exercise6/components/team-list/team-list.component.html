@@ -1,0 +1,14 @@
+<div class="teams-list">
+    <ul *ngFor="let team of teams; let i = index" >
+        <li class="team-component">
+            <app-team-component [team]="team" [teamIndex]="i"></app-team-component>
+        </li>
+    </ul>
+</div>
+<!--div class="add-team">
+    <b>Add Team</b>
+    <form [formGroup]="teamFormGroup">
+      <input formControlName="team" type="text" placeholder="Team name" (ngModelChange)="test()"/>
+      <button [disabled]="teamFormGroup.controls.team.invalid" (click)="addTeam()">&#8853;</button>
+    </form>
+</div-->
