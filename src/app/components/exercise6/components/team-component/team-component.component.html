@@ -1,5 +1,5 @@
-<section class="team-container" *ngIf="team">
-  <div class="team-section">
+<section class="team-container">
+  <div class="team-section" *ngIf="team">
     <div class="team-input">
       <span class="team-name">{{team.name}}</span>
       <button class="sort button-app" (click)="sort()">&#8597;</button>
@@ -11,7 +11,7 @@
       </form>
     </span>
   </div>
-  <div class="channel-section">
+  <div class="channel-section" *ngIf="team">
     <ul>
         <li *ngFor="let channel of team && team.channels; let i = index" class="channel-name">
             <span>{{channel.name}}</span>
