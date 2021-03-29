@@ -25,6 +25,7 @@ import { Exercise4Component } from './components/exercise4/exercise4.component';
 import { MovieListComponent } from './components/exercise4/movie-list/movie-list.component';
 import { CssSpinnerComponent } from './components/exercise1/common/css-spinner/css-spinner.component';
 import { Exercise5Component } from './components/exercise5/exercise5.component';
+import { Exercise6Component } from './components/exercise6/exercise6.component';
 
 @NgModule({
   imports: [
@@ -51,7 +52,8 @@ import { Exercise5Component } from './components/exercise5/exercise5.component';
     Exercise4Component,
     MovieListComponent,
     CssSpinnerComponent,
-    Exercise5Component
+    Exercise5Component,
+    Exercise6Component
   ],
   providers: [AppService],
   bootstrap: [AppComponent]
