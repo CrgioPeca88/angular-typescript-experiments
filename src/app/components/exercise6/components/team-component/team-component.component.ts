@@ -1,8 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Team, Channel } from '../team-list/team-list.component';
 import { FormBuilder, Validators, FormGroup} from '@angular/forms';
-import { Observable } from 'rxjs';
-import { of } from 'rxjs/observable/of';
+import { Observable, of } from 'rxjs';
 import { exhaustMap, map, tap } from 'rxjs/operators';
 import { TeamsChannelService, FormControls, PATTERN_CONTAIN_STRINGS } from '../../services/teams-channels.service';
 

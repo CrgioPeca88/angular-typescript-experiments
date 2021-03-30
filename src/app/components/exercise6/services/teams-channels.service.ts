@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormGroup, AbstractControl} from '@angular/forms';
-import { Observable } from 'rxjs';
-import { of } from 'rxjs/observable/of';
+import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { Team, Channel } from '../components/team-list/team-list.component';
