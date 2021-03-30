@@ -1,16 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+// Dependencies
+import { Component, OnInit, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup} from '@angular/forms';
-import { Observable, of } from 'rxjs';
+import { Observable, of, fromEvent } from 'rxjs';
 import { exhaustMap, map, tap } from 'rxjs/operators';
+
+// Assets
 import { TeamsChannelService, FormControls, PATTERN_CONTAIN_STRINGS } from '../../services/teams-channels.service';
+
+export class Team {
+  channels: Channel[];
+  name: String
+}
+
+export class Channel {
+  name: string;
+  index: number;
+}
 
 @Component({
   selector: 'app-team-list',
   templateUrl: './team-list.component.html',
   styleUrls: ['./team-list.component.css']
 })
-export class TeamList implements OnInit {
+export class TeamList implements OnInit, AfterViewInit {
 
+  @ViewChild('addTeamButton') addTeamButton: ElementRef;
   public teamFormGroup: FormGroup;
   public teams: Team[] = [];
   public component: Team;
@@ -52,6 +66,10 @@ export class TeamList implements OnInit {
 		});
   }
 
+  ngAfterViewInit() {
+    this.addTeam();
+  }
+
   private newTeam(name: string): Team {
     return {
       channels: [],
@@ -59,8 +77,8 @@ export class TeamList implements OnInit {
     }
   }
 
-  addTeam(): void {
-    of(null).pipe(
+  private addTeam(): void {
+    fromEvent(this.addTeamButton.nativeElement, 'click').pipe(
       exhaustMap(n                        => this.teamsChannelService.formValidation(this.teamFormGroup)),
       exhaustMap((controls: FormControls) => this.teamsChannelService.updateListElements<Team>(this.teams, this.newTeam(controls.team.value)))
     ).subscribe((res: Team[]) => {
@@ -70,17 +88,4 @@ export class TeamList implements OnInit {
     });
   }
 
-  test(): void {
-    console.log(this.teamFormGroup);
-  }
-}
-
-export class Team {
-  channels: Channel[];
-  name: String
-}
-
-export class Channel {
-  name: string;
-  index: number;
 }
