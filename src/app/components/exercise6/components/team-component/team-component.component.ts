@@ -1,7 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit, QueryList, ViewChildren, ElementRef } from '@angular/core';
 import { Team, Channel } from '../team-list/team-list.component';
 import { FormBuilder, Validators, FormGroup} from '@angular/forms';
-import { Observable, of } from 'rxjs';
+import { Observable, of, fromEvent } from 'rxjs';
 import { exhaustMap, map, tap } from 'rxjs/operators';
 import { TeamsChannelService, FormControls, PATTERN_CONTAIN_STRINGS } from '../../services/teams-channels.service';
 
@@ -10,8 +10,9 @@ import { TeamsChannelService, FormControls, PATTERN_CONTAIN_STRINGS } from '../.
   templateUrl: './team-component.component.html',
   styleUrls: ['./team-component.component.css']
 })
-export class TeamComponent implements OnInit {
+export class TeamComponent implements OnInit, AfterViewInit {
   // IMP - Implement addChannel and removeChannel operations within this component
+  @ViewChildren('removeChannelButton', {read: ElementRef}) removeChannelButton: QueryList<ElementRef>;
   @Input() team: Team;
   @Input() teamIndex: number;
   currentIndex: number;
@@ -49,6 +50,33 @@ export class TeamComponent implements OnInit {
     this.originalState = {...this.team};
   }
 
+  ngAfterViewInit() {
+    this.startSubsRemoveChannel(this.removeChannelButton.toArray());
+    this.removeChannel();
+  }
+
+  private startSubsRemoveChannel(buttonList: ElementRef[]): void {
+    buttonList.forEach((element: ElementRef) => {
+      fromEvent(
+        element.nativeElement,
+        'click',
+        (args: any) => args.target.returnValue as Channel
+      ).pipe(
+        exhaustMap((channelToRem: Channel) => this.getChannelsAfterRemove(this.team.channels, channelToRem))
+      ).subscribe((response: any) =>{
+        this.team.channels = [...response];
+        this.originalState.channels = [...response];
+      });
+    });
+  }
+
+  private removeChannel(): void {
+    this.removeChannelButton.changes.pipe(
+      tap((qle: QueryList<ElementRef>) => this.startSubsRemoveChannel(qle.toArray()))
+    ).subscribe();
+  }
+
+  /**
   removeChannel(channelToRem: Channel): void {
     of(null).pipe(
       exhaustMap(n => this.getChannelsAfterRemove(this.team.channels, channelToRem))
@@ -57,6 +85,7 @@ export class TeamComponent implements OnInit {
       this.originalState.channels = [...response];
     });
   }
+  */
 
   private getChannelsAfterRemove(channels: Channel[], channelToRem: Channel): Observable<Channel[]> {
     return of(channels).pipe(

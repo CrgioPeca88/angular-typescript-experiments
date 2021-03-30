@@ -15,7 +15,7 @@
     <ul>
         <li *ngFor="let channel of team && team.channels; let i = index" class="channel-name">
             <span>{{channel.name}}</span>
-            <button class="button-app" (click)="removeChannel(channel)">&#8854;</button>
+            <button #removeChannelButton [returnValue]="channel" class="button-app">&#8854;</button>
         </li>
     </ul>
   </div>
